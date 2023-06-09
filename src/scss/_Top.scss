@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import './include_media.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+:root {
+    --bg-transparent: none;
+    --bg-base-color: white;
+    --bg-main: rgb(19, 19, 19);
+    --bg-div: rgb(79, 19, 107);
+    --text-font: 'Raleway', sans-serif;
+    --text-hover: rgba($color: #f3aa21, $alpha: 1.0);
+}
+
+@mixin baseDisplay($backgroundColor, $height, $width) {
+    background: $backgroundColor;
+    height: $height;
+    width: $width;
+}
+
+.top {
+    @include baseDisplay(var(--bg-transparent), 7vh, 100vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .innerTopContainer {
+        @include baseDisplay(var(--bg-transparent), 6vh, 70vw);
+        display: flex;
+        position: relative;
+
+        .logoContainer {
+            @include baseDisplay(var(--bg-transparent), 6vh, 15vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .img {
+                height: 3.5vh;
+            }
+        }
+
+        .searchForm {
+            @include baseDisplay(var(--bg-transparent), 6vh, 20vw);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: absolute;
+            right: 0;
+
+            .input {
+                height: 3.5vh;
+                width: 15vw;
+                padding: 12px 12px;
+                transition: .3s;
+                outline: none;
+                border: 0px solid transparent;
+                font-family: var(--text-font);
+            }
+
+            .input:focus {
+                width: 20vw;
+            }
+        }
+    }
+}
+
+@include media('<=Ipad') {
+    .top {
+        @include baseDisplay(var(--bg-transparent), 5vh, 100vw);
+
+        .innerTopContainer {
+            @include baseDisplay(var(--bg-transparent), 4vh, 90vw);
+
+            .logoContainer {
+                @include baseDisplay(var(--bg-transparent), 4vh, 15vw);
+
+                .img {
+                    height: 2vh;
+                }
+            }
+
+            .searchForm {
+                @include baseDisplay(var(--bg-transparent), 4vh, 20vw);
+
+                .input {
+                    height: 2.5vh;
+                    font-size: .9em;
+                }
+
+                .input:focus {
+                    width: 30vw;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=Tablet') {
+    .top {
+        @include baseDisplay(var(--bg-transparent), 5vh, 100vw);
+
+        .innerTopContainer {
+            @include baseDisplay(var(--bg-transparent), 4vh, 90vw);
+
+            .logoContainer {
+                @include baseDisplay(var(--bg-transparent), 4vh, 15vw);
+
+                .img {
+                    height: 2vh;
+                }
+            }
+
+            .searchForm {
+                @include baseDisplay(var(--bg-transparent), 4vh, auto);
+
+                .input {
+                    height: 2.5vh;
+                    width: 25vw;
+                    font-size: .9em;
+                }
+
+                .input:focus {
+                    width: 30vw;
+                }
+            }
+        }
+    }
+}
+
+@include media('<=largePhone') {
+    .top {
+        @include baseDisplay(var(--bg-transparent), 6vh, 100vw);
+
+        .innerTopContainer {
+            @include baseDisplay(var(--bg-transparent), 5vh, 90vw);
+
+            .logoContainer {
+                @include baseDisplay(var(--bg-transparent), 5vh, 35vw);
+
+                .img {
+                    height: 3.5vh;
+                }
+            }
+
+            .searchForm {
+                display: none;
+            }
+        }
+    }
+}
+
+@include media('<=mediumPhone') {
+    .top {
+        @include baseDisplay(var(--bg-transparent), 6vh, 100vw);
+
+        .innerTopContainer {
+            @include baseDisplay(var(--bg-transparent), 5vh, 90vw);
+
+            .logoContainer {
+                @include baseDisplay(var(--bg-transparent), 5vh, 35vw);
+
+                .img {
+                    height: 3vh;
+                }
+            }
+
+            .searchForm {
+                display: none;
+            }
+        }
+    }
+}
